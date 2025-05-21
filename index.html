@@ -3,9 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <title>JUR CONSTRUCCIONES Y DESARROLLO S.A.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+        header { background: linear-gradient(to right, #f57c00, #ef6c00); color: white; padding: 20px; text-align: center; }
+        nav { background: #222; padding: 10px; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; }
+        section { padding: 40px; max-width: 900px; margin: auto; background: white; margin-top: 20px; border-radius: 10px; }
+        footer { background: #222; color: white; text-align: center; padding: 20px; }
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 30px;
+            text-align: center;
+            line-height: 60px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        .lang-selector {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        form button {
+            background: #f57c00;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bienvenido a JUR CONSTRUCCIONES Y DESARROLLO S.A.</h1>
-    <p>Sitio en construcción. Pronto más información.</p>
+    <div class="lang-selector">
+        🌐 <select onchange="changeLang(this.value)">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+        </select>
+    </div>
+
+    <header>
+        <h1 id="title">JUR CONSTRUCCIONES Y DESARROLLO S.A.</h1>
+        <p id="subtitle">Calidad e innovación en cada proyecto</p>
+    </header>
+
+    <nav>
+        <a href="#nosotros" id="nav_about">Nosotros</a>
+        <a href="#servicios" id="nav_services">Servicios</a>
+        <a href="#contacto" id="nav_contact">Contacto</a>
+    </nav>
+
+    <section id="nosotros">
+        <h2 id="about_title">¿Quiénes somos?</h2>
+        <p id="about_text">Somos una empresa panameña dedicada a la construcción, remodelación y desarrollo de proyectos residenciales y comerciales.</p>
+    </section>
+
+    <section id="servicios">
+        <h2 id="services_title">Servicios</h2>
+        <ul>
+            <li>Construcción de obras</li>
+            <li>Remodelaciones</li>
+            <li>Pintura</li>
+            <li>Electricidad</li>
+            <li>Plomería</li>
+            <li>Impermeabilización</li>
+        </ul>
+    </section>
+
+    <section id="contacto">
+        <h2 id="contact_title">Formulario de Contacto</h2>
+        <form action="https://formspree.io/f/mnqegqpe" method="POST">
+            <input type="text" name="name" placeholder="Nombre completo" required>
+            <input type="email" name="email" placeholder="Correo electrónico" required>
+            <input type="text" name="phone" placeholder="Teléfono">
+            <textarea name="message" placeholder="Mensaje" rows="5" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <a class="whatsapp-btn" href="https://wa.me/50761912191" target="_blank" title="Escríbenos por WhatsApp">💬</a>
+
+    <footer>
+        &copy; 2025 JUR CONSTRUCCIONES Y DESARROLLO S.A. | Todos los derechos reservados
+    </footer>
+
+    <script>
+        function changeLang(lang) {
+            const texts = {
+                es: {
+                    title: "JUR CONSTRUCCIONES Y DESARROLLO S.A.",
+                    subtitle: "Calidad e innovación en cada proyecto",
+                    nav_about: "Nosotros",
+                    nav_services: "Servicios",
+                    nav_contact: "Contacto",
+                    about_title: "¿Quiénes somos?",
+                    about_text: "Somos una empresa panameña dedicada a la construcción, remodelación y desarrollo de proyectos residenciales y comerciales.",
+                    services_title: "Servicios",
+                    contact_title: "Formulario de Contacto"
+                },
+                en: {
+                    title: "JUR CONSTRUCTION & DEVELOPMENT INC.",
+                    subtitle: "Quality and innovation in every project",
+                    nav_about: "About Us",
+                    nav_services: "Services",
+                    nav_contact: "Contact",
+                    about_title: "Who We Are",
+                    about_text: "We are a Panamanian company focused on construction, remodeling and project development for homes and businesses.",
+                    services_title: "Our Services",
+                    contact_title: "Contact Form"
+                },
+                zh: {
+                    title: "JUR 建筑与开发有限公司",
+                    subtitle: "每一个项目都体现品质与创新",
+                    nav_about: "关于我们",
+                    nav_services: "服务项目",
+                    nav_contact: "联系",
+                    about_title: "我们是谁？",
+                    about_text: "我们是一家巴拿马建筑公司，专注于住宅和商业项目的建设与改造。",
+                    services_title: "服务内容",
+                    contact_title: "联系表格"
+                }
+            };
+            const t = texts[lang];
+            for (const id in t) {
+                const el = document.getElementById(id);
+                if (el) el.textContent = t[id];
+            }
+        }
+    </script>
 </body>
 </html>
