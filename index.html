@@ -1,166 +1,146 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
     <title>JUR CONSTRUCCIONES Y DESARROLLO S.A.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0; background-color: #f9f9f9;
-        }
-        header {
-            background-color: #e8491d;
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+        header { background: linear-gradient(to right, #f57c00, #ef6c00); color: white; padding: 20px; text-align: center; }
+        nav { background: #222; padding: 10px; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; }
+        section { padding: 40px; max-width: 900px; margin: auto; background: white; margin-top: 20px; border-radius: 10px; }
+        footer { background: #222; color: white; text-align: center; padding: 20px; }
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
             color: white;
-            padding: 20px;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 30px;
             text-align: center;
+            line-height: 60px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 1000;
         }
-        header h1 {
-            margin: 0; font-size: 2em;
+        .lang-selector {
+            position: fixed;
+            top: 10px;
+            right: 10px;
         }
-        header p {
-            margin: 5px 0 0;
-            font-size: 1.2em;
-            font-weight: 300;
-        }
-        nav {
-            background-color: #333;
-            display: flex;
-            justify-content: center;
-            padding: 0;
-        }
-        nav a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: bold;
-            letter-spacing: 0.1em;
-        }
-        nav a:hover {
-            background-color: #555;
-        }
-        section {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        section h2 {
-            color: #e8491d;
-            border-bottom: 3px solid #e8491d;
-            padding-bottom: 5px;
-            margin-bottom: 20px;
-        }
-        .nosotros {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            align-items: center;
-            justify-content: center;
-        }
-        .nosotros img {
-            max-width: 350px;
+        form input, form textarea {
             width: 100%;
-            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 15px;
         }
-        .nosotros p {
-            flex: 1 1 300px;
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
-        .servicios {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-        }
-        .servicio {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 0 8px rgba(0,0,0,0.1);
-            padding: 15px;
-            max-width: 220px;
-            text-align: center;
-        }
-        .servicio img {
-            max-width: 100%;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
-        .servicio h3 {
-            margin: 10px 0 0;
-            color: #e8491d;
-        }
-        .contacto p {
-            font-size: 1.1em;
-            margin: 8px 0;
-        }
-        footer {
-            background-color: #333;
+        form button {
+            background: #f57c00;
             color: white;
-            text-align: center;
-            padding: 15px 10px;
-            margin-top: 40px;
-        }
-        @media (max-width: 700px) {
-            .nosotros {
-                flex-direction: column;
-            }
-            .servicios {
-                flex-direction: column;
-                align-items: center;
-            }
+            padding: 10px 20px;
+            border: none;
         }
     </style>
 </head>
 <body>
-<header>
-    <h1>JUR CONSTRUCCIONES Y DESARROLLO S.A.</h1>
-    <p>Calidad e innovación en cada proyecto</p>
-</header>
-<nav>
-    <a href="#nosotros">Nosotros</a>
-    <a href="#servicios">Servicios</a>
-    <a href="#contacto">Contacto</a>
-</nav>
-<section id="nosotros" class="nosotros">
-    <img src="https://cdn.pixabay.com/photo/2016/11/29/04/11/construction-1868174_1280.jpg" alt="Equipo de construcción" />
-    <p>Somos una empresa panameña dedicada a la construcción, remodelación y desarrollo de proyectos residenciales y comerciales. Nuestro compromiso es ofrecer calidad, innovación y atención personalizada en cada obra que emprendemos.</p>
-</section>
-<section id="servicios" class="servicios">
-    <div class="servicio">
-        <img src="https://cdn.pixabay.com/photo/2017/08/07/08/55/concrete-2599726_1280.jpg" alt="Vaciado de concreto" />
-        <h3>Vaciado de concreto</h3>
+    <div class="lang-selector">
+        🌐 <select onchange="changeLang(this.value)">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+        </select>
     </div>
-    <div class="servicio">
-        <img src="https://cdn.pixabay.com/photo/2018/02/19/15/43/construction-3168491_1280.jpg" alt="Construcción de casas" />
-        <h3>Edificación de casas</h3>
-    </div>
-    <div class="servicio">
-        <img src="https://cdn.pixabay.com/photo/2016/10/12/15/36/renovation-1732303_1280.jpg" alt="Remodelación de locales" />
-        <h3>Remodelación de locales</h3>
-    </div>
-    <div class="servicio">
-        <img src="https://cdn.pixabay.com/photo/2016/11/18/13/47/road-1837274_1280.jpg" alt="Construcción de vías" />
-        <h3>Vías de concreto</h3>
-    </div>
-    <div class="servicio">
-        <img src="https://cdn.pixabay.com/photo/2017/11/22/07/09/electrician-2969942_1280.jpg" alt="Trabajos eléctricos" />
-        <h3>Electricidad</h3>
-    </div>
-    <div class="servicio">
-        <img src="https://cdn.pixabay.com/photo/2018/02/09/18/54/plumbing-3146552_1280.jpg" alt="Plomería" />
-        <h3>Plomería</h3>
-    </div>
-</section>
-<section id="contacto" class="contacto">
-    <h2>Contacto</h2>
-    <p>Teléfonos: 507-6191-2191 / 507-472-3612</p>
-    <p>Correo: <a href="mailto:ventas@jurconstr.com">ventas@jurconstr.com</a></p>
-    <p>Sitio web: <a href="https://www.jurconstruccion.com" target="_blank">www.jurconstruccion.com</a></p>
-</section>
-<footer>
-    &copy; 2025 JUR CONSTRUCCIONES Y DESARROLLO S.A. - Todos los derechos reservados.
-</footer>
+
+    <header>
+        <h1 id="title">JUR CONSTRUCCIONES Y DESARROLLO S.A.</h1>
+        <p id="subtitle">Calidad e innovación en cada proyecto</p>
+    </header>
+
+    <nav>
+        <a href="#nosotros" id="nav_about">Nosotros</a>
+        <a href="#servicios" id="nav_services">Servicios</a>
+        <a href="#contacto" id="nav_contact">Contacto</a>
+    </nav>
+
+    <section id="nosotros">
+        <h2 id="about_title">¿Quiénes somos?</h2>
+        <p id="about_text">Somos una empresa panameña dedicada a la construcción, remodelación y desarrollo de proyectos residenciales y comerciales.</p>
+    </section>
+
+    <section id="servicios">
+        <h2 id="services_title">Servicios</h2>
+        <ul>
+            <li>Construcción de obras</li>
+            <li>Remodelaciones</li>
+            <li>Pintura</li>
+            <li>Electricidad</li>
+            <li>Plomería</li>
+            <li>Impermeabilización</li>
+        </ul>
+    </section>
+
+    <section id="contacto">
+        <h2 id="contact_title">Formulario de Contacto</h2>
+        <form action="https://formspree.io/f/mnqegqpe" method="POST">
+            <input type="text" name="name" placeholder="Nombre completo" required>
+            <input type="email" name="email" placeholder="Correo electrónico" required>
+            <input type="text" name="phone" placeholder="Teléfono">
+            <textarea name="message" placeholder="Mensaje" rows="5" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <a class="whatsapp-btn" href="https://wa.me/50761912191" target="_blank" title="Escríbenos por WhatsApp">💬</a>
+
+    <footer>
+        &copy; 2025 JUR CONSTRUCCIONES Y DESARROLLO S.A. | Todos los derechos reservados
+    </footer>
+
+    <script>
+        function changeLang(lang) {
+            const texts = {
+                es: {
+                    title: "JUR CONSTRUCCIONES Y DESARROLLO S.A.",
+                    subtitle: "Calidad e innovación en cada proyecto",
+                    nav_about: "Nosotros",
+                    nav_services: "Servicios",
+                    nav_contact: "Contacto",
+                    about_title: "¿Quiénes somos?",
+                    about_text: "Somos una empresa panameña dedicada a la construcción, remodelación y desarrollo de proyectos residenciales y comerciales.",
+                    services_title: "Servicios",
+                    contact_title: "Formulario de Contacto"
+                },
+                en: {
+                    title: "JUR CONSTRUCTION & DEVELOPMENT INC.",
+                    subtitle: "Quality and innovation in every project",
+                    nav_about: "About Us",
+                    nav_services: "Services",
+                    nav_contact: "Contact",
+                    about_title: "Who We Are",
+                    about_text: "We are a Panamanian company focused on construction, remodeling and project development for homes and businesses.",
+                    services_title: "Our Services",
+                    contact_title: "Contact Form"
+                },
+                zh: {
+                    title: "JUR 建筑与开发有限公司",
+                    subtitle: "每一个项目都体现品质与创新",
+                    nav_about: "关于我们",
+                    nav_services: "服务项目",
+                    nav_contact: "联系",
+                    about_title: "我们是谁？",
+                    about_text: "我们是一家巴拿马建筑公司，专注于住宅和商业项目的建设与改造。",
+                    services_title: "服务内容",
+                    contact_title: "联系表格"
+                }
+            };
+            const t = texts[lang];
+            for (const id in t) {
+                const el = document.getElementById(id);
+                if (el) el.textContent = t[id];
+            }
+        }
+    </script>
 </body>
 </html>
