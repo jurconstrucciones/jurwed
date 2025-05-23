@@ -1,0 +1,35 @@
+<div class="servicio">
+  <h3>Construcción de Vías de Concreto</h3>
+  <img src="imagenes/construccion-vias.jpg" alt="Construcción de vías de concreto" style="max-width:100%; height:auto;">
+  <p>Descripción del servicio...</p>
+</div>
+
+<div class="servicio">
+  <h3>Plomería</h3>
+  <img src="imagenes/plomeria.jpg" alt="Plomería" style="max-width:100%; height:auto;">
+  <p>Descripción del servicio...</p>
+</div>
+
+<div class="servicio">
+  <h3>Electricidad</h3>
+  <img src="imagenes/electricidad.jpg" alt="Electricidad" style="max-width:100%; height:auto;">
+  <p>Descripción del servicio...</p>
+</div>
+
+<div class="servicio">
+  <h3>Confección de Planos</h3>
+  <img src="imagenes/planos.jpg" alt="Confección de Planos" style="max-width:100%; height:auto;">
+  <p>Descripción del servicio...</p>
+</div>
+
+<div class="servicio">
+  <h3>Remodelaciones de Casas, Galerías y Oficinas</h3>
+  <img src="imagenes/remodelacion.jpg" alt="Remodelaciones" style="max-width:100%; height:auto;">
+  <p>Descripción del servicio...</p>
+</div>
+
+<div class="servicio">
+  <h3>Movimientos de Tierra</h3>
+  <img src="imagenes/movimientos-tierra.jpg" alt="Movimientos de Tierra" style="max-width:100%; height:auto;">
+  <p>Descripción del servicio...</p>
+</div>
