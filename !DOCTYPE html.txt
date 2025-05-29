@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JUR CONSTRUCCION - Servicios Profesionales</title>
+    <style>
+        /* Reset y base */
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f7f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        header nav {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        header ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+        header ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        header ul li a:hover {
+            color: #ffcc00;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 100px auto 40px;
+            padding: 0 1rem;
+        }
+        section {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h2.section-title {
+            border-bottom: 3px solid #ffcc00;
+            display: inline-block;
+            padding-bottom: 0.3rem;
+            color: #004080;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+            gap: 1.5rem;
+        }
+        .service-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #fff;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.15);
+        }
+        .service-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+        .service-content {
+            padding: 1rem 1.2rem;
+        }
+        .service-content h3 {
+            margin-bottom: 0.6rem;
+            color: #004080;
+        }
+        .service-content p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+        footer {
+            background-color: #004080;
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Botón flotante WhatsApp */
+        #whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            cursor: pointer;
+            z-index: 1100;
+            transition: background-color 0.3s ease;
+        }
+        #whatsapp-button:hover {
+            background-color: #1ebe57;
+        }
+        #whatsapp-button svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <h1>JUR CONSTRUCCION</h1>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="inicio">
+        <h2 class="section-title">Bienvenidos a JUR CONSTRUCCION</h2>
+        <p>Somos una empresa dedicada a ofrecer servicios profesionales de construcción, electricidad, plomería y arquitectura, con más de 10 años de experiencia en Panamá. Garantizamos calidad, eficiencia y compromiso en cada proyecto.</p>
+    </section>
+
+    <section id="servicios">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="services-grid">
+            <article class="service-card">
+                <img src="https://images.unsplash.com/photo-1581090700227-f9a2b8c1f57c?auto=format&fit=crop&w=800&q=80" alt="Vaciados de concreto" />
+                <div class="service-content">
+                    <h3>Vaciados de concreto</h3>
+                    <p>Especialistas en vaciados de concreto para todo tipo de proyectos, asegurando durabilidad y resistencia.</p>
+                </div>
+            </article>
+
+            <article class="service-card">
+                <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=800&q=80" alt="Construcción completa" />
+                <div class="service-content">
+                    <h3>Construcción completa</h3>
+                    <p>Proyectos llave en mano que incluyen desde planificación hasta la entrega final con altos estándares de calidad.</p>
+                </div>
+            </article>
+
+            <article class="service-card">
+                <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=800&q=80" alt="Movimiento de tierra" />
+                <div class="service-content">
+                    <h3>Movimiento de tierra</h3>
+                    <p>Servicios de excavación y nivelación para preparar el terreno de manera segura y eficiente.</p>
+                </div>
+            </article>
+
+            <article class="service-card">
+                <img src="https://images.unsplash.com/photo-1571091718767-0351e98aa6b8?auto=format&fit=crop&w=800&q=80" alt="Electricidad" />
+                <div class="service-content">
+                    <h3>Electricidad</h3>
+                    <p>Instalaciones eléctricas residenciales e industriales realizadas por profesionales certificados.</p>
+                </div>
+            </article>
+
+            <article class="service-card">
+                <img src="https://images.unsplash.com/photo-1504274066651-8d31a536b11a?auto=format&fit=crop&w=800&q=80" alt="Plomería" />
+                <div class="service-content">
+                    <h3>Plomería</h3>
+                    <p>Soluciones integrales en sistemas hidráulicos para proyectos nuevos y mantenimiento.</p>
+                </div>
+            </article>
+
+            <article class="service-card">
+                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="Arquitectura" />
+                <div class="service-content">
+                    <h3>Arquitectura</h3>
+                    <p>Diseño arquitectónico innovador y funcional para proyectos residenciales y comerciales.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="nosotros">
+        <h2 class="section-title">Quiénes Somos</h2>
+        <p>En JUR CONSTRUCCION contamos con un equipo multidisciplinario y una amplia experiencia en el sector construcción. Nuestro compromiso es ofrecer soluciones integrales, desde la planificación hasta la ejecución, garantizando calidad y satisfacción en cada obra.</p>
+    </section>
+
+    <section id="contacto">
+        <h2 class="section-title">Contacto</h2>
+        <p>Teléfono: +507 6191-2191 / +507 4723-612</p>
+        <p>Email: <a href="mailto:ventas@jurconstruccion.com">ventas@jurconstruccion.com</a></p>
+        <p>Dirección: Vista del Mar #10, Corregimiento Puerto Pilón, Colón, Panamá</p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 JUR CONSTRUCCION | Todos los derechos reservados.</p>
+</footer>
+
+<!-- Botón flotante WhatsApp -->
+<a href="https://wa.me/50761912191" target="_blank" id="whatsapp-button" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24">
+        <path d="M20.52 3.48a11.63 11.63 0 00-16.44 0c-4.52 4.52-4.52 11.87 0 16.39l-1.82 6.23 6.36-1.83a11.57 11.57 0 006.17 1.87c3.11 0 6.02-1.21 8.21-3.4 4.52-4.52 4.52-11.87 0-16.39zm-6.92 14.63c-3.02 0-5.81-1.59-7.3-4.29l.92-1.1-1.09-3.27-1.22-.83c-1.04 2.88-.18 6.3 2.61 8.35 2.87 2.11 6.88 1.88 9.37-.6 1.14-1.13 1.76-2.65 1.76-4.17 0-1.19-.47-2.29-1.31-3.13l-2.79-2.79a2.18 2.18 0 00-3.06 0l-1.16 1.16 3.23 3.23 1.23 1.23-1.75 1.75a.77.77 0 01-1.09 0l-1.63-1.63a.77.77 0 010-1.09l1.16-1.16-2.42-2.42c-.25-.25-.41-.59-.41-.95 0-.74.6-1.34 1.34-1.34.36 0 .69.15.95.41l2.06 2.06a.77.77 0 010 1.09l-1.23 1.23a.77.77 0 01-1.09 0l-1.16-1.16 2.44-2.44a3.57 3.57 0 015.05 0l2.79 2.79c1.74 1.74 1.74 4.56 0 6.3-1.48 1.48-3.48 2.3-5.54 2.3z"/>
+    </svg>
+</a>
+
+</body>
+</html>
